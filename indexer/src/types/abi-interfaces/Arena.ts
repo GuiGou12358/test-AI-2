@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Auto-generated , DO NOT EDIT
-import {EthereumLog, EthereumTransaction} from "@subql/types-ethereum";
-type LightEthereumLog<T> = EthereumLog<T & import("@subql/types-ethereum/dist/ethereum/interfaces").EthereumResult>;
+import {EthereumLog, EthereumTransaction, LightEthereumLog} from "@subql/types-ethereum";
 
 import {CombatResolvedEvent, OwnershipTransferredEvent, YokiRegisteredEvent, Arena} from '../contracts/Arena'
 

@@ -19,6 +19,8 @@ Smart contracts développés avec Hardhat, OpenZeppelin, ethers.js et Mocha + Ch
 | `npm run test:coverage` | Rapport de couverture |
 | `npm run deploy:local` | Déploie sur localhost |
 | `npm run deploy:sepolia` | Déploie sur Sepolia |
+| `npm run deploy:soneium-testnet` | Déploie sur Soneium testnet (Minato, défaut) |
+| `npm run deploy:soneium-mainnet` | Déploie sur Soneium mainnet |
 | `npm run lint` | Vérification Solhint |
 
 ## Structure
@@ -32,6 +34,18 @@ contracts/
 ```
 
 ## Déploiement
+
+**Réseau par défaut : Soneium testnet (Minato).**
+
+Pour déployer sur Soneium testnet (défaut) :
+
+1. Créer `.env` avec `PRIVATE_KEY` et optionnellement `SONEIUM_TESTNET_RPC_URL`
+2. `npm run deploy:soneium-testnet` ou `npm run deploy` (réseau par défaut)
+
+Pour déployer sur Soneium mainnet :
+
+1. `.env` avec `PRIVATE_KEY` et optionnellement `SONEIUM_MAINNET_RPC_URL`
+2. `npm run deploy:soneium-mainnet`
 
 Pour déployer sur Sepolia :
 

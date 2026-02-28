@@ -90,9 +90,8 @@ export class CombatResolvedEvent implements CompatEntity {
      * ⚠️ This function will first search cache data followed by DB data. Please consider this when using order and offset options.⚠️
      * */
     static async getByFields(filter: FieldsExpression<CombatResolvedEventProps>[], options: GetOptions<CombatResolvedEventProps>): Promise<CombatResolvedEvent[]> {
-        // @ts-expect-error getByFields exists at runtime in SubQuery node
         const records = await store.getByFields<CompatCombatResolvedEventProps>('CombatResolvedEvent', filter  as unknown as FieldsExpression<CompatCombatResolvedEventProps>[], options as unknown as GetOptions<CompatCombatResolvedEventProps>);
-        return records.map((record: CompatCombatResolvedEventProps) => this.create(record as unknown as CombatResolvedEventProps));
+        return records.map(record => this.create(record as unknown as CombatResolvedEventProps));
     }
 
     static create(record: CombatResolvedEventProps): CombatResolvedEvent {

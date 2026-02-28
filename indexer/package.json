@@ -26,15 +26,15 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@subql/cli": "^5.0.0",
-    "@subql/node": "^4.0.0",
-    "@subql/query": "^2.0.0",
-    "@subql/types": "^2.0.0",
-    "@subql/types-ethereum": "^1.0.1",
-    "@types/node": "^22.0.0",
-    "eslint": "^9.0.0",
-    "typescript": "^5.0.0",
-    "vitest": "^2.0.0"
+    "@subql/cli": "6.6.2",
+    "@subql/node": "^6.4.6",
+    "@subql/query": "2.25.0",
+    "@subql/types": "3.15.0",
+    "@subql/types-ethereum": "4.2.3",
+    "@types/node": "25.3.2",
+    "eslint": "10.0.2",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18"
   },
   "dependencies": {
     "@subql/node-ethereum": "^6.0.0"

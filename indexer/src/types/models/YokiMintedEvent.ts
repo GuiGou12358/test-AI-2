@@ -93,9 +93,8 @@ export class YokiMintedEvent implements CompatEntity {
      * ⚠️ This function will first search cache data followed by DB data. Please consider this when using order and offset options.⚠️
      * */
     static async getByFields(filter: FieldsExpression<YokiMintedEventProps>[], options: GetOptions<YokiMintedEventProps>): Promise<YokiMintedEvent[]> {
-        // @ts-expect-error getByFields exists at runtime in SubQuery node
         const records = await store.getByFields<CompatYokiMintedEventProps>('YokiMintedEvent', filter  as unknown as FieldsExpression<CompatYokiMintedEventProps>[], options as unknown as GetOptions<CompatYokiMintedEventProps>);
-        return records.map((record: CompatYokiMintedEventProps) => this.create(record as unknown as YokiMintedEventProps));
+        return records.map(record => this.create(record as unknown as YokiMintedEventProps));
     }
 
     static create(record: YokiMintedEventProps): YokiMintedEvent {

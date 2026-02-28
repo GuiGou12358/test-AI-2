@@ -45,7 +45,7 @@ cd worker && npm install && npm start
 
 ## Variables d'environnement
 
-- **contracts** : `PRIVATE_KEY`, `SEPOLIA_RPC_URL`
+- **contracts** : `PRIVATE_KEY`, `SEPOLIA_RPC_URL`, `SONEIUM_TESTNET_RPC_URL`, `SONEIUM_MAINNET_RPC_URL` (réseau par défaut : Soneium testnet)
 - **frontend** : `NEXT_PUBLIC_SUBQUERY_ENDPOINT`
 - **worker** : `RPC_URL`, `CONTRACT_ADDRESS`, `SUBQUERY_ENDPOINT`, `LLM_API_URL`, `LLM_API_KEY`
 

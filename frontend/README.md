@@ -25,7 +25,12 @@ Créer `.env.local` :
 
 ```
 NEXT_PUBLIC_SUBQUERY_ENDPOINT=http://localhost:3000/graphql
+NEXT_PUBLIC_YOKI_NFT_ADDRESS=0x...
+NEXT_PUBLIC_ARENA_ADDRESS=0x...
+NEXT_PUBLIC_COMBAT_RESULT_NFT_ADDRESS=0x...
 ```
+
+Les adresses des contrats sont celles déployées sur le réseau cible (ex. Soneium testnet).
 
 ## Structure
 

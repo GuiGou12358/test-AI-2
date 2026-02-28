@@ -81,9 +81,8 @@ export class YokiRegisteredEvent implements CompatEntity {
      * ⚠️ This function will first search cache data followed by DB data. Please consider this when using order and offset options.⚠️
      * */
     static async getByFields(filter: FieldsExpression<YokiRegisteredEventProps>[], options: GetOptions<YokiRegisteredEventProps>): Promise<YokiRegisteredEvent[]> {
-        // @ts-expect-error getByFields exists at runtime in SubQuery node
         const records = await store.getByFields<CompatYokiRegisteredEventProps>('YokiRegisteredEvent', filter  as unknown as FieldsExpression<CompatYokiRegisteredEventProps>[], options as unknown as GetOptions<CompatYokiRegisteredEventProps>);
-        return records.map((record: CompatYokiRegisteredEventProps) => this.create(record as unknown as YokiRegisteredEventProps));
+        return records.map(record => this.create(record as unknown as YokiRegisteredEventProps));
     }
 
     static create(record: YokiRegisteredEventProps): YokiRegisteredEvent {
