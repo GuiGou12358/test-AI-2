@@ -1,0 +1,31 @@
+---
+description: Conventions du projet monorepo blockchain
+alwaysApply: true
+---
+
+# Conventions du projet
+
+## Structure
+
+- **contracts** : Solidity, Hardhat, OpenZeppelin
+- **indexer** : SubQuery, GraphQL
+- **frontend** : Next.js, TypeScript, ethers.js
+- **worker** : TypeScript, ethers.js, LLM
+
+## Règles générales
+
+- Chaque sous-projet est **autonome** avec son propre `package.json`
+- Gestionnaire de paquets : **npm**
+- Toujours répondre en **français**
+- Préférer TypeScript pour le code applicatif
+
+## Contrats Solidity
+
+- Utiliser OpenZeppelin pour les patterns standards (Ownable, etc.)
+- Suivre le style Solhint configuré
+- Tester avec Mocha + Chai
+
+## Intégrations
+
+- Le frontend et le worker consomment l'API GraphQL de l'indexer SubQuery
+- Les adresses des contrats sont configurables via variables d'environnement

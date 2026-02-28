@@ -1,0 +1,57 @@
+type YokiMintedEvent @entity {
+  id: ID!
+  blockHeight: BigInt!
+  blockHash: String!
+  transactionHash: String!
+  contractAddress: String!
+  tokenId: BigInt!
+  owner: String!
+  name: String!
+  force: Int!
+  rapidite: Int!
+  dexterite: Int!
+  resistance: Int!
+  intelligence: Int!
+}
+
+type YokiRegisteredEvent @entity {
+  id: ID!
+  blockHeight: BigInt!
+  blockHash: String!
+  transactionHash: String!
+  contractAddress: String!
+  owner: String!
+  tokenId: BigInt!
+  slotIndex: Int!
+  totalScore: BigInt!
+}
+
+type CombatResolvedEvent @entity {
+  id: ID!
+  blockHeight: BigInt!
+  blockHash: String!
+  transactionHash: String!
+  contractAddress: String!
+  winnerTokenId: BigInt!
+  loserTokenId: BigInt!
+  winner: String!
+  loser: String!
+  winnerScore: BigInt!
+  loserScore: BigInt!
+  combatResultTokenId: BigInt!
+}
+
+type CombatResultCreatedEvent @entity {
+  id: ID!
+  blockHeight: BigInt!
+  blockHash: String!
+  transactionHash: String!
+  contractAddress: String!
+  tokenId: BigInt!
+  winner: String!
+  loser: String!
+  winnerTokenId: BigInt!
+  loserTokenId: BigInt!
+  winnerScore: BigInt!
+  loserScore: BigInt!
+}

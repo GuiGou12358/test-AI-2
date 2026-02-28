@@ -1,0 +1,27 @@
+---
+description: Standards Solidity et Hardhat
+globs: "contracts/**/*.sol"
+alwaysApply: false
+---
+
+# Standards Solidity
+
+- Version : ^0.8.24
+- Utiliser OpenZeppelin pour Ownable, ReentrancyGuard, etc.
+- Documenter les contrats avec NatSpec
+- Émettre des événements pour les changements d'état importants
+- Préférer `custom errors` aux `require` avec messages
+
+## Exemple
+
+```solidity
+error Unauthorized();
+
+event ValueUpdated(uint256 indexed oldValue, uint256 indexed newValue);
+
+function update(uint256 newValue) external onlyOwner {
+  uint256 old = value;
+  value = newValue;
+  emit ValueUpdated(old, newValue);
+}
+```

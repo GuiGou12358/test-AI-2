@@ -1,0 +1,72 @@
+specVersion: "1.0.0"
+version: "1.0.0"
+name: "indexer"
+description: "Indexer SubQuery pour les contrats Yoki, Arena et CombatResult"
+runner:
+  node:
+    name: "@subql/node-ethereum"
+    version: "*"
+  query:
+    name: "@subql/query"
+    version: "*"
+schema:
+  file: ./schema.graphql
+network:
+  chainId: "11155111"
+  endpoint:
+    - "https://rpc.sepolia.org"
+  dictionary: "https://api.subquery.network/sq/subquery/eth-sepolia-dictionary"
+dataSources:
+  - kind: ethereum/Runtime
+    startBlock: 1
+    options:
+      abi: YokiNFT
+      address: "0x0000000000000000000000000000000000000000"
+    assets:
+      YokiNFT:
+        file: ../contracts/artifacts/contracts/YokiNFT.sol/YokiNFT.json
+    mapping:
+      file: ./dist/index.js
+      handlers:
+        - handler: handleYokiMinted
+          kind: ethereum/LogHandler
+          filter:
+            topics:
+              - "YokiMinted(uint256,address,string,uint8,uint8,uint8,uint8,uint8)"
+  - kind: ethereum/Runtime
+    startBlock: 1
+    options:
+      abi: Arena
+      address: "0x0000000000000000000000000000000000000000"
+    assets:
+      Arena:
+        file: ../contracts/artifacts/contracts/Arena.sol/Arena.json
+    mapping:
+      file: ./dist/index.js
+      handlers:
+        - handler: handleYokiRegistered
+          kind: ethereum/LogHandler
+          filter:
+            topics:
+              - "YokiRegistered(address,uint256,uint8,uint256)"
+        - handler: handleCombatResolved
+          kind: ethereum/LogHandler
+          filter:
+            topics:
+              - "CombatResolved(uint256,uint256,address,address,uint256,uint256,uint256)"
+  - kind: ethereum/Runtime
+    startBlock: 1
+    options:
+      abi: CombatResultNFT
+      address: "0x0000000000000000000000000000000000000000"
+    assets:
+      CombatResultNFT:
+        file: ../contracts/artifacts/contracts/CombatResultNFT.sol/CombatResultNFT.json
+    mapping:
+      file: ./dist/index.js
+      handlers:
+        - handler: handleCombatResultCreated
+          kind: ethereum/LogHandler
+          filter:
+            topics:
+              - "CombatResultCreated(uint256,address,address,uint256,uint256,uint256,uint256)"

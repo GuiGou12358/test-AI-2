@@ -1,0 +1,42 @@
+{
+  "name": "indexer",
+  "version": "1.0.0",
+  "description": "Indexer SubQuery pour les données onchain des contrats Solidity",
+  "scripts": {
+    "build": "subql build",
+    "codegen": "subql codegen",
+    "dev": "docker-compose pull && docker-compose up",
+    "start:docker": "docker-compose up",
+    "start:local": "subql-node -d .",
+    "query:local": "subql-query -d .",
+    "publish": "subql publish",
+    "validate": "subql validate",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix"
+  },
+  "keywords": [
+    "subquery",
+    "indexer",
+    "evm",
+    "ethereum",
+    "graphql"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@subql/cli": "^5.0.0",
+    "@subql/node": "^4.0.0",
+    "@subql/query": "^2.0.0",
+    "@subql/types": "^2.0.0",
+    "@subql/types-ethereum": "^1.0.1",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  },
+  "dependencies": {
+    "@subql/node-ethereum": "^6.0.0"
+  }
+}

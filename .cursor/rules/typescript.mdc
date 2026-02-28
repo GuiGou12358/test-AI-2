@@ -1,0 +1,18 @@
+---
+description: Conventions TypeScript pour indexer, frontend et worker
+globs: "**/*.ts"
+alwaysApply: false
+---
+
+# Conventions TypeScript
+
+- Mode strict activé
+- Préférer `const` et `async/await`
+- Gérer les erreurs explicitement (pas de catch vide)
+- Variables d'environnement : utiliser `process.env` et documenter dans `.env.example`
+
+## ethers.js v6
+
+- `ethers.Contract` avec ABI typé
+- `ethers.JsonRpcProvider` pour la lecture
+- `formatEther` / `parseEther` pour les montants
